@@ -10,7 +10,7 @@ ENV         NSS_WRAPPER_GROUP /tmp/group
 RUN         dpkg --add-architecture i386 \
             && apt-get update \
             && apt-get upgrade -y \
-            && apt-get install -y libnss-wrapper gettext-base tar curl gcc g++ libc6 libtbb2 libtbb2:i386 lib32gcc1 lib32stdc++6 lib32tinfo5 lib32z1 libtinfo5:i386 libncurses5:i386 libcurl3-gnutls:i386 \
+            && apt-get install -y libnss-wrapper gettext-base tar curl tmux gcc g++ libc6 libtbb2 libtbb2:i386 lib32gcc1 lib32stdc++6 lib32tinfo5 lib32z1 libtinfo5:i386 libncurses5:i386 libcurl3-gnutls:i386 \
             && useradd -m -d /home/container -s /bin/bash container \
             && touch ${NSS_WRAPPER_PASSWD} ${NSS_WRAPPER_GROUP} \
             && chgrp 0 ${NSS_WRAPPER_PASSWD} ${NSS_WRAPPER_GROUP} \
